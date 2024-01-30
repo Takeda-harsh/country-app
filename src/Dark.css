@@ -1,0 +1,20 @@
+.darkmode .header {
+    background-color: hsl(207, 26%, 17%);
+    transition: all 500ms;
+}
+.darkmode .main {
+    background-color: hsl(207, 26%, 17%);
+    transition: all 500ms;
+}
+.darkmode .header h1{
+    color: hsl(0, 0%, 100%);
+    transition: all 500ms;
+}
+.darkmode .header p{
+    color: hsl(0, 0%, 100%);
+    transition: all 500ms;
+}
+.darkmode .header svg{
+    color: hsl(0, 0%, 100%);
+    transition: all 500ms;
+}
