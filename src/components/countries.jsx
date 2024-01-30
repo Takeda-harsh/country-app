@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Filter from './Filter';
+
 
 // eslint-disable-next-line react/prop-types
 function Countries({  filteredCountries}) {
