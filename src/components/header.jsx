@@ -1,19 +1,46 @@
-import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
-import '../App.css'
-import '../Dark.css'
-export default function Header({ darkMode, toggleDarkMode}) {
+/* eslint-disable no-unused-vars */
+import React from 'react'
 
-    return(
-    <>
-    
-        <div className={`header ${darkMode ? 'darkmode' : ''}`}>
-            <h1>Where in the world?</h1>
-            <div className="theme" onClick={toggleDarkMode}> 
-                <div>{darkMode ? <IoSunnyOutline/> : <IoMoonOutline />}</div>
-                <p>{darkMode ? 'Light Mode' : 'Dark Mode'}</p>
-            </div>
+
+function Header(theme, onToggleTheme) {
+   const toggleTheme = () => {
+    const theme = document.querySelector('.theme')
+    const header = document.querySelector('header')
+    const input = document.querySelector('input')
+    const select = document.querySelector('select')
+    const details = document.querySelectorAll('.details')
+
+    theme.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode')
+        header.classList.toggle('light-mode')
+        input.classList.toggle('light-mode')
+        select.classList.toggle('light-mode')
+
+        details.forEach((detail) => {
+            detail.classList.toggle('light-mode')
+        })
+    })
+   }
+    return (
+        <>
+           <header>
+        <div>
+          <h1>Where in the world?</h1>
         </div>
-    
-        
-    </>
-)}
+        <div className='theme' onClick={toggleTheme}>
+          {theme === 'light' ? (
+            <>
+              <i className="fas fa-moon"></i> Dark Mode
+            </>
+          ) : (
+            <>
+              <i className="fas fa-sun"></i> Light Mode
+            </>
+          )}
+        </div>
+      </header>
+        </>
+    )
+}
+
+export default Header
